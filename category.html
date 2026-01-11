@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse blog posts by category">
+    <title>Category - Personal Chronicles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-bg: #fdfcf9;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --accent: #2c5f2d;
+            --hover-accent: #1e4620;
+        }
+
+        body {
+            font-family: 'Crimson Pro', serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ebe8 100%);
+            min-height: 100vh;
+            color: var(--text-dark);
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 30px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-link:hover {
+            color: var(--hover-accent);
+        }
+
+        .category-header {
+            text-align: center;
+        }
+
+        .category-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        /* Blog List */
+        .blog-list {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 30px;
+        }
+
+        .blog-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+            transform: scaleY(0);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .blog-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .blog-card:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 30px rgba(44, 95, 45, 0.15);
+        }
+
+        .blog-date {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .blog-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .blog-punchline {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .read-more {
+            margin-top: 20px;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.3s;
+        }
+
+        .blog-card:hover .read-more {
+            gap: 12px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .empty-state h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .empty-state p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            margin-top: 80px;
+        }
+
+        footer p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .category-name {
+                font-size: 2rem;
+            }
+
+            .blog-card {
+                padding: 30px 25px;
+            }
+
+            .blog-title {
+                font-size: 1.6rem;
+            }
+
+            .blog-list {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="back-link">
+                <span>←</span> Back to Home
+            </a>
+            <div class="category-header">
+                <h1 class="category-name" id="categoryTitle"></h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="blog-list" id="blogList">
+        <!-- Blog cards will be dynamically inserted here -->
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Personal Chronicles. All thoughts shared with authenticity.</p>
+    </footer>
+
+    <script src="blogs-data.js"></script>
+    <script>
+        // Get category from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('cat');
+
+        // Category display names
+        const categoryNames = {
+            'technology': 'Technology',
+            'science': 'Science',
+            'philosophy': 'Philosophy',
+            'poetry': 'Poetry',
+            'photo-story': 'Photo Story',
+            'politics': 'Politics'
+        };
+
+        // Set page title
+        document.getElementById('categoryTitle').textContent = categoryNames[category] || 'Blog Posts';
+        document.title = `${categoryNames[category] || 'Blog'} - Personal Chronicles`;
+
+        // Filter and display blogs
+        const blogListContainer = document.getElementById('blogList');
+        const filteredBlogs = blogsData.filter(blog => blog.category === category);
+
+        if (filteredBlogs.length === 0) {
+            blogListContainer.innerHTML = `
+                <div class="empty-state">
+                    <h2>No posts yet</h2>
+                    <p>Check back soon for new content in this category!</p>
+                </div>
+            `;
+        } else {
+            filteredBlogs.forEach(blog => {
+                const blogCard = document.createElement('a');
+                blogCard.className = 'blog-card';
+                blogCard.href = `blog.html?id=${blog.id}`;
+                
+                blogCard.innerHTML = `
+                    <div class="blog-date">${blog.date}</div>
+                    <h2 class="blog-title">${blog.title}</h2>
+                    <p class="blog-punchline">${blog.punchline}</p>
+                    <div class="read-more">Read more <span>→</span></div>
+                `;
+                
+                blogListContainer.appendChild(blogCard);
+            });
+        }
+    </script>
+</body>
+</html>

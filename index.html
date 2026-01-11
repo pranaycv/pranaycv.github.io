@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A personal blog exploring technology, science, philosophy, poetry, photography, and politics through unique perspectives and experiences">
+    <meta name="keywords" content="technology blog, science articles, philosophy essays, poetry, photo stories, political analysis">
+    <title>Personal Chronicles - A Journey Through Ideas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-bg: #fdfcf9;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --accent: #2c5f2d;
+            --hover-accent: #1e4620;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Georgia', 'Crimson Text', serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ebe8 100%);
+            min-height: 100vh;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Animated leaves background */
+        .leaves-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .leaf {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            opacity: 0.6;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .leaf {
+            position: absolute;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        /* Category Grid */
+        .categories-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .category-btn {
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            padding: 60px 40px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .category-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(44, 95, 45, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .category-btn:hover::before {
+            left: 100%;
+        }
+
+        .category-btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(44, 95, 45, 0.2);
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .category-desc {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            margin-top: 80px;
+        }
+
+        footer p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .categories-container {
+                grid-template-columns: 1fr;
+                padding: 0 20px;
+                margin: 40px auto;
+            }
+
+            .category-btn {
+                padding: 40px 30px;
+            }
+
+            .category-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated leaves background -->
+    <div class="leaves-container" id="leaves"></div>
+
+    <header>
+        <h1>Personal Chronicles</h1>
+        <p class="tagline">Exploring the intersections of thought, art, and experience</p>
+    </header>
+
+    <main class="categories-container">
+        <button class="category-btn" onclick="window.location.href='category.html?cat=technology'">
+            <span class="category-icon">💻</span>
+            <h2 class="category-title">Technology</h2>
+            <p class="category-desc">Insights into innovation, digital transformation, and the future of tech</p>
+        </button>
+
+        <button class="category-btn" onclick="window.location.href='category.html?cat=science'">
+            <span class="category-icon">🔬</span>
+            <h2 class="category-title">Science</h2>
+            <p class="category-desc">Exploring the wonders of discovery and the mysteries of our universe</p>
+        </button>
+
+        <button class="category-btn" onclick="window.location.href='category.html?cat=philosophy'">
+            <span class="category-icon">🤔</span>
+            <h2 class="category-title">Philosophy</h2>
+            <p class="category-desc">Questions of existence, meaning, and the human condition</p>
+        </button>
+
+        <button class="category-btn" onclick="window.location.href='category.html?cat=poetry'">
+            <span class="category-icon">✍️</span>
+            <h2 class="category-title">Poetry</h2>
+            <p class="category-desc">Verses that capture emotions, moments, and the beauty of language</p>
+        </button>
+
+        <button class="category-btn" onclick="window.location.href='category.html?cat=photo-story'">
+            <span class="category-icon">📷</span>
+            <h2 class="category-title">Photo Story</h2>
+            <p class="category-desc">Visual narratives that speak beyond words</p>
+        </button>
+
+        <button class="category-btn" onclick="window.location.href='category.html?cat=politics'">
+            <span class="category-icon">🌍</span>
+            <h2 class="category-title">Politics</h2>
+            <p class="category-desc">Reflections on governance, society, and the world we share</p>
+        </button>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Personal Chronicles. All thoughts shared with authenticity.</p>
+    </footer>
+
+    <script>
+        // Create animated leaves
+        const leavesContainer = document.getElementById('leaves');
+        const leafSymbols = ['🍃', '🍂', '🌿'];
+        
+        function createLeaf() {
+            const leaf = document.createElement('div');
+            leaf.className = 'leaf';
+            leaf.textContent = leafSymbols[Math.floor(Math.random() * leafSymbols.length)];
+            leaf.style.left = Math.random() * 100 + '%';
+            leaf.style.fontSize = (Math.random() * 10 + 15) + 'px';
+            leaf.style.animationDuration = (Math.random() * 10 + 15) + 's';
+            leaf.style.animationDelay = Math.random() * 5 + 's';
+            leavesContainer.appendChild(leaf);
+            
+            // Remove leaf after animation
+            setTimeout(() => {
+                leaf.remove();
+            }, parseFloat(leaf.style.animationDuration) * 1000 + parseFloat(leaf.style.animationDelay) * 1000);
+        }
+
+        // Create leaves continuously
+        setInterval(createLeaf, 800);
+        
+        // Initial batch
+        for (let i = 0; i < 15; i++) {
+            setTimeout(createLeaf, i * 300);
+        }
+    </script>
+</body>
+</html>

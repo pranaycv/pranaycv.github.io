@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read personal blog post">
+    <title>Blog Post - Personal Chronicles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Playfair+Display:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --reading-bg: #f9f7f4;
+            --text-primary: #2d2d2d;
+            --text-secondary: #5a5a5a;
+            --accent: #2c5f2d;
+            --border-light: #e5e5e5;
+        }
+
+        body {
+            font-family: 'Lora', 'Georgia', serif;
+            background: var(--reading-bg);
+            color: var(--text-primary);
+            line-height: 1.8;
+            font-size: 1.125rem;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        .home-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .home-link:hover {
+            color: var(--accent);
+        }
+
+        /* Article */
+        article {
+            max-width: 720px;
+            margin: 60px auto 80px;
+            padding: 0 30px;
+        }
+
+        .blog-meta {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .blog-category {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .blog-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .blog-punchline {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .blog-date {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .blog-content {
+            font-size: 1.125rem;
+            line-height: 1.9;
+            color: var(--text-primary);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5em;
+        }
+
+        .blog-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-top: 2em;
+            margin-bottom: 0.8em;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .blog-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-top: 1.8em;
+            margin-bottom: 0.7em;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid var(--accent);
+            padding-left: 30px;
+            margin: 2em 0;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        .blog-content ul, .blog-content ol {
+            margin-bottom: 1.5em;
+            padding-left: 30px;
+        }
+
+        .blog-content li {
+            margin-bottom: 0.5em;
+        }
+
+        .blog-content code {
+            background: rgba(44, 95, 45, 0.08);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+        }
+
+        .blog-content pre {
+            background: rgba(44, 95, 45, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1.5em;
+        }
+
+        .blog-content pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 2em 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Related Posts */
+        .related-posts {
+            max-width: 720px;
+            margin: 80px auto;
+            padding: 0 30px;
+        }
+
+        .related-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--text-primary);
+        }
+
+        .related-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        .related-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .related-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .related-card p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            margin-top: 80px;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                font-size: 1.05rem;
+            }
+
+            article {
+                padding: 0 20px;
+                margin: 40px auto 60px;
+            }
+
+            .blog-title {
+                font-size: 2.2rem;
+            }
+
+            .blog-punchline {
+                font-size: 1.15rem;
+            }
+
+            .blog-content {
+                font-size: 1.05rem;
+                line-height: 1.8;
+            }
+
+            .blog-content h2 {
+                font-size: 1.6rem;
+            }
+
+            .blog-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .related-posts {
+                padding: 0 20px;
+            }
+        }
+
+        /* Reading progress indicator */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--accent);
+            width: 0%;
+            z-index: 101;
+            transition: width 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="back-link" id="backLink">
+                <span>←</span> <span id="backText">Back to Category</span>
+            </a>
+            <a href="index.html" class="home-link">Home</a>
+        </div>
+    </header>
+
+    <article id="articleContent">
+        <!-- Article content will be dynamically inserted here -->
+    </article>
+
+    <footer>
+        <p>&copy; 2025 Personal Chronicles. All thoughts shared with authenticity.</p>
+    </footer>
+
+    <script src="blogs-data.js"></script>
+    <script>
+        // Get blog ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const blogId = urlParams.get('id');
+
+        // Find the blog post
+        const blog = blogsData.find(b => b.id === blogId);
+
+        if (blog) {
+            // Set page title
+            document.title = `${blog.title} - Personal Chronicles`;
+
+            // Set meta description
+            const metaDesc = document.querySelector('meta[name="description"]');
+            metaDesc.content = blog.punchline;
+
+            // Category display names
+            const categoryNames = {
+                'technology': 'Technology',
+                'science': 'Science',
+                'philosophy': 'Philosophy',
+                'poetry': 'Poetry',
+                'photo-story': 'Photo Story',
+                'politics': 'Politics'
+            };
+
+            // Render blog content
+            const articleContent = document.getElementById('articleContent');
+            articleContent.innerHTML = `
+                <div class="blog-meta">
+                    <span class="blog-category">${categoryNames[blog.category]}</span>
+                    <h1 class="blog-title">${blog.title}</h1>
+                    <p class="blog-punchline">${blog.punchline}</p>
+                    <div class="blog-date">${blog.date}</div>
+                </div>
+                <div class="blog-content">
+                    ${blog.content}
+                </div>
+            `;
+
+            // Set back link
+            const backLink = document.getElementById('backLink');
+            backLink.href = `category.html?cat=${blog.category}`;
+            document.getElementById('backText').textContent = `Back to ${categoryNames[blog.category]}`;
+        } else {
+            document.getElementById('articleContent').innerHTML = `
+                <div class="blog-meta">
+                    <h1 class="blog-title">Blog post not found</h1>
+                    <p class="blog-punchline">The post you're looking for doesn't exist or has been removed.</p>
+                </div>
+            `;
+        }
+
+        // Reading progress indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>
