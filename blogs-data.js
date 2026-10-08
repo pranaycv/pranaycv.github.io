@@ -14,13 +14,36 @@ const blogsData = [
 
             <p>Hack the North is one of Canada’s largest hackathons. This year they received about 7,000 applications and selected around 1,000 people. More than 350 teams started from scratch and tried to turn an idea into a working prototype before the weekend was over. Walking through the venue, it felt less like a competition and more like 350 small startups working side by side, each building something they cared about.</p>
 
-            <p>The event was very well run — transportation, food, mentors, places to sleep, sponsor support. For us, the most valuable part was having technical teams from the sponsor companies right there. When the hardware or the software refused to cooperate at two in the morning, there was someone in the room who could actually help.</p>
+            <h2>The weekend started on the bus</h2>
+
+            <p>Hack the North arranged a free bus from Toronto to Waterloo. It was pre-booking only, and it turned out to be one of the better parts of the whole trip. You sit down with people you have never met, and by the time the school bus pulls into Waterloo you have already started the weekend. The journey itself was the icebreaker.</p>
+
+            <figure>
+                <img src="images/hack-the-north/bus.jpg" alt="A yellow school bus on a leafy street in Waterloo, used for Hack the North’s free ride from Toronto." loading="lazy">
+                <figcaption>The free bus from Toronto to Waterloo. The weekend began before we reached the venue.</figcaption>
+            </figure>
+
+            <p>Then they handed us the badge, and that really gave me goosebumps. Mine had my name on the screen — Pranay Soni — sitting on a purple board with a running ESP32, a bunch of keys to play with, and mood lights for making friends. Sharing contacts was almost too easy: tap your badge against someone else’s, and you were done. You could also build games, port them onto the badge, play them, and share them. It was a little computer around your neck, and it made the whole place feel like a hardware lab from the first hour.</p>
+
+            <figure>
+                <img src="images/hack-the-north/badge.jpg" alt="A purple Hack the North hardware badge with an ESP32, buttons, and a screen welcoming Pranay Soni." loading="lazy">
+                <figcaption>The badge: an ESP32, a handful of keys, mood lights, and a tap to swap contacts.</figcaption>
+            </figure>
+
+            <p>The rest of the event was just as well run — food, mentors, places to sleep, sponsor support. For us, the most valuable part was having technical teams from the sponsor companies right there. When the hardware or the software refused to cooperate at two in the morning, there was someone in the room who could actually help.</p>
 
             <h2>The idea I walked in with</h2>
 
             <p>I wanted to build something around computer vision and gaze tracking. The picture in my head was a pair of smart glasses that could look out at the world and also look in at the person’s eyes. If you know where someone is looking, and you can see what is in front of them, you can start to connect the two. That felt like a foundation for many different applications, not just one product.</p>
 
             <p>We ended up as a team of four, from different parts of the world and with very different backgrounds. One teammate from France came from aerospace engineering. He designed the 3D-printed headset we wore, and he was a very understanding person to work with through a long, messy weekend. Another, from Slovakia, brought mechanical engineering and very strong programming skills. The fourth was a Waterloo student from Calgary, with a kind of leadership that kept the team moving when things got difficult. I brought my years in computer vision and AI. Different ages, different strengths, different ways of solving problems. That mix was one of the best parts of the experience.</p>
+
+            <p>It was also fun, with my teammate from France, to meet the boss of Waterloo — the great Canadian goose. You have to respect these guys. Behind the costume, of course, was a person wearing it, which somehow made the moment even better.</p>
+
+            <figure>
+                <img src="images/hack-the-north/goose.jpg" alt="Pranay Soni and his teammate from France standing with the University of Waterloo goose mascot." loading="lazy">
+                <figcaption>With my teammate from France and the boss of Waterloo. Yes, there is a person in there.</figcaption>
+            </figure>
 
             <figure>
                 <img src="images/hack-the-north/team.jpg" alt="Four teammates around a classroom table during Hack the North, with a laptop open and glasses being fitted in the background." loading="lazy">
