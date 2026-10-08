@@ -357,13 +357,16 @@
         <p>&copy; 2025 Personal Chronicles. All thoughts shared with authenticity.</p>
     </footer>
 
-    <script src="blogs-data.js?v=20261008d"></script>
+    <script src="blogs-data.js?v=20261008e"></script>
     <script>
         // Get blog ID from URL parameter
         const urlParams = new URLSearchParams(window.location.search);
         const blogId = urlParams.get('id');
         if (blogId === 'tech-003') {
             location.replace('hack-the-north.html');
+        }
+        if (blogId === 'pol-002') {
+            location.replace('atmanirbhar-bharat.html');
         }
 
         const blog = typeof blogsData !== 'undefined' ? blogsData.find(b => b.id === blogId) : null;
