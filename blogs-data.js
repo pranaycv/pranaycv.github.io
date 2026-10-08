@@ -7,12 +7,12 @@ const blogsData = [
         category: 'technology',
         permalink: 'hack-the-north.html',
         title: 'Hack the North, After Twenty Years Away',
-        punchline: 'I went back to Queen’s for MMAI and ended up at Hack the North — 36 hours, an international team, and a pair of glasses that turn gaze into music.',
+        punchline: 'I went back to Queen’s (Smith School of Business) for MMAI and ended up at Hack the North, 36 hours, an international team, and a pair of glasses that turn gaze into music.',
         date: 'October 8, 2026',
         content: `
-            <p>After nearly twenty years of building computer vision systems in industry, I went back to school. I joined Queen’s University’s Master of Management in Artificial Intelligence to get closer to the fundamentals of AI again. What I did not expect was Hack the North — a thousand students, 36 hours, and a 3D-printed camera sitting on my head while we tried to turn eye movement into music.</p>
+            <p>After nearly twenty years of building computer vision systems in industry, I went back to school. I joined Queen’s University (Smith School of Business) for the Master of Management in Artificial Intelligence to get closer to the fundamentals of AI again. What I did not expect was Hack the North, a thousand students, 36 hours, and a 3D-printed camera sitting on my head while we tried to turn eye movement into music.</p>
 
-            <p>Hack the North is one of Canada’s largest hackathons. This year they received about 7,000 applications and selected around 1,000 people. More than 350 teams started from scratch and tried to turn an idea into a working prototype before the weekend was over. Walking through the venue, it felt less like a competition and more like 350 small startups working side by side, each building something they cared about.</p>
+            <p>Hack the North is Canada’s biggest hackathon. This year they received about 7,000 applications and selected around 1,000 people. More than 350 teams started from scratch and tried to turn an idea into a working prototype before the weekend was over. Walking through the venue, it felt less like a competition and more like 350 small startups working side by side, each building something they cared about.</p>
 
             <h2>The weekend started on the bus</h2>
 
@@ -23,14 +23,14 @@ const blogsData = [
                 <figcaption>The free bus from Toronto to Waterloo. The weekend began before we reached the venue.</figcaption>
             </figure>
 
-            <p>Then they handed us the badge, and that really gave me goosebumps. Mine had my name on the screen — Pranay Soni — sitting on a purple board with a running ESP32, a bunch of keys to play with, and mood lights for making friends. Sharing contacts was almost too easy: tap your badge against someone else’s, and you were done. You could also build games, port them onto the badge, play them, and share them. It was a little computer around your neck, and it made the whole place feel like a hardware lab from the first hour.</p>
+            <p>Then they handed us the badge, and that really gave me goosebumps. Mine had my name on the screen, Pranay Soni, sitting on a purple board with a running ESP32, a bunch of keys to play with, and mood lights for making friends. Sharing contacts was almost too easy: tap your badge against someone else’s, and you were done. You could also build games, port them onto the badge, play them, and share them. It was a little computer around your neck, and it made the whole place feel like a hardware lab from the first hour.</p>
 
             <figure>
                 <img src="images/hack-the-north/badge.jpg" alt="A purple Hack the North hardware badge with an ESP32, buttons, and a screen welcoming Pranay Soni." loading="lazy">
                 <figcaption>The badge: an ESP32, a handful of keys, mood lights, and a tap to swap contacts.</figcaption>
             </figure>
 
-            <p>The rest of the event was just as well run — food, mentors, places to sleep, sponsor support. For us, the most valuable part was having technical teams from the sponsor companies right there. When the hardware or the software refused to cooperate at two in the morning, there was someone in the room who could actually help.</p>
+            <p>The rest of the event was just as well run, food, mentors, places to sleep, sponsor support. For us, the most valuable part was having technical teams from the sponsor companies right there. When the hardware or the software refused to cooperate at two in the morning, there was someone in the room who could actually help.</p>
 
             <h2>The idea I walked in with</h2>
 
@@ -38,7 +38,7 @@ const blogsData = [
 
             <p>We ended up as a team of four, from different parts of the world and with very different backgrounds. One teammate from France came from aerospace engineering. He designed the 3D-printed headset we wore, and he was a very understanding person to work with through a long, messy weekend. Another, from Slovakia, brought mechanical engineering and very strong programming skills. The fourth was a Waterloo student from Calgary, with a kind of leadership that kept the team moving when things got difficult. I brought my years in computer vision and AI. Different ages, different strengths, different ways of solving problems. That mix was one of the best parts of the experience.</p>
 
-            <p>It was also fun, with my teammate from France, to meet the boss of Waterloo — the great Canadian goose. You have to respect these guys. Behind the costume, of course, was a person wearing it, which somehow made the moment even better.</p>
+            <p>It was also fun, with my teammate from France, to meet the boss of Waterloo, the great Canadian goose. You have to respect these guys. Behind the costume, of course, was a person wearing it, which somehow made the moment even better.</p>
 
             <figure>
                 <img src="images/hack-the-north/goose.jpg" alt="Pranay Soni and his teammate from France standing with the University of Waterloo goose mascot." loading="lazy">
@@ -63,18 +63,18 @@ const blogsData = [
 
             <h2>QNX, a Raspberry Pi, and the hard part</h2>
 
-            <p>One of the biggest challenges was deciding what hardware and operating system we could actually get working in a weekend. We found QNX’s platform — a Raspberry Pi 5 running the QNX operating system. The real-time side of QNX mattered for us. Gaze tracking only feels right if the system responds quickly.</p>
+            <p>One of the biggest challenges was deciding what hardware and operating system we could actually get working in a weekend. We found QNX’s platform, a Raspberry Pi 5 running the QNX operating system. The real-time side of QNX mattered for us. Gaze tracking only feels right if the system responds quickly.</p>
 
             <p>Getting the libraries we needed onto that platform was not easy. We spent a lot of time on installation and configuration. The QNX technical team was extremely helpful, and with their support we eventually got the software environment running.</p>
 
-            <p>From there we built the pipeline. A small neural network identified objects in the scene. Gaze tracking estimated where the person was looking. Then we mapped that gaze onto objects in the real world and played the matching sound. A lot of the development and hardware integration was in C++, which let us bring the computer-vision and AI pieces together with the embedded system. Seeing the whole path work — from the cameras, through gaze and the model, to the sound — was one of the most rewarding parts of the project.</p>
+            <p>From there we built the pipeline. A small neural network identified objects in the scene. Gaze tracking estimated where the person was looking. Then we mapped that gaze onto objects in the real world and played the matching sound. A lot of the development and hardware integration was in C++, which let us bring the computer-vision and AI pieces together with the embedded system. Seeing the whole path work, from the cameras, through gaze and the model, to the sound, was one of the most rewarding parts of the project.</p>
 
             <figure>
                 <img src="images/hack-the-north/dashboard.jpg" alt="The EyeMelody laptop interface showing an inner-camera eye lock view on the left and an outer-camera gaze point view on the right." loading="lazy">
                 <figcaption>The live view: eye lock on the left, gaze in the scene on the right.</figcaption>
             </figure>
 
-            <h2>What Queen’s MMAI actually changed</h2>
+            <h2>What Queen’s (Smith School of Business) MMAI actually changed</h2>
 
             <p>My time in the Queen’s MMAI program helped me directly during the hackathon. We had worked through machine-learning concepts and a couple of Kaggle competitions, so I was used to thinking about how a model is built, not only what it outputs. The program also gave me a stronger foundation in the mathematics behind AI and deep learning. That made it possible to implement the vision pieces instead of treating the model as a black box.</p>
 
@@ -86,7 +86,7 @@ const blogsData = [
 
             <figure>
                 <img src="images/hack-the-north/stage.jpg" alt="The Hack the North stage with QNX slides listing EyeMelody among the Embedded System with AI projects." loading="lazy">
-                <figcaption>On stage at Hack the North, as QNX named the embedded AI projects of the weekend — including EyeMelody.</figcaption>
+                <figcaption>On stage at Hack the North, as QNX named the embedded AI projects of the weekend, including EyeMelody.</figcaption>
             </figure>
 
             <p>The code for the prototype is <a href="https://github.com/pranaycv/htn-gaze" target="_blank" rel="noopener noreferrer">on GitHub</a>.</p>
@@ -95,11 +95,11 @@ const blogsData = [
 
             <p>The prize was not the main thing. What impressed me most was the talent, energy, and determination among the younger people around us. Working beside students who were so passionate about building things was genuinely inspiring.</p>
 
-            <p>The weekend also reinforced something I have been seeing in industry: AI is shortening the path from an idea to a working prototype. Things that might have taken months or years to even try can now be tested in a weekend. Accessible hardware, capable models, and people who will stay up to wire a camera to a headband — that combination turns sketches into something you can actually hold.</p>
+            <p>The weekend also reinforced something I have been seeing in industry: AI is shortening the path from an idea to a working prototype. Things that might have taken months or years to even try can now be tested in a weekend. Accessible hardware, capable models, and people who will stay up to wire a camera to a headband, that combination turns sketches into something you can actually hold.</p>
 
             <blockquote>For me, Hack the North was a chance to step outside my usual professional environment, learn from a new generation of engineers, and put what I am learning at Queen’s to work in a real setting.</blockquote>
 
-            <p>Coming back to school after twenty years, and then having a weekend like this, has been a very rewarding part of my MMAI journey. Not because we won a challenge, but because we got to find out, quickly, whether a gaze could become a melody — and because the people around us were already onto the next idea.</p>
+            <p>Coming back to school after twenty years, and then having a weekend like this, has been a very rewarding part of my MMAI journey. Not because we won a challenge, but because we got to find out, quickly, whether a gaze could become a melody, and because the people around us were already onto the next idea.</p>
         `
     },
     {
