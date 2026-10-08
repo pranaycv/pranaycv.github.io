@@ -233,8 +233,74 @@
         <p>&copy; 2025 Personal Chronicles. All thoughts shared with authenticity.</p>
     </footer>
 
-        <script src="blogs-data.js?v=20261008e"></script>
     <script>
+        // Listing metadata lives here so the category page does not depend on a cached blogs-data.js
+        const postsIndex = [
+            {
+                category: 'technology',
+                permalink: 'hack-the-north.html',
+                title: 'Hack the North, After Twenty Years Away',
+                punchline: 'I went back to Queen’s (Smith School of Business) for MMAI and ended up at Hack the North, 36 hours, an international team, and a pair of glasses that turn gaze into music.',
+                date: 'October 8, 2026'
+            },
+            {
+                category: 'technology',
+                id: 'tech-001',
+                title: 'The Silent Revolution of Artificial Intelligence',
+                punchline: 'How AI is reshaping our world in ways we barely notice, yet profoundly experience.',
+                date: 'January 10, 2025'
+            },
+            {
+                category: 'technology',
+                id: 'tech-002',
+                title: 'Open Source: The Democratic Foundation of Digital Future',
+                punchline: 'Why the future of technology depends on collaboration over competition.',
+                date: 'January 5, 2025'
+            },
+            {
+                category: 'science',
+                id: 'sci-001',
+                title: 'The Quantum Realm: Where Reality Gets Strange',
+                punchline: 'Exploring the bizarre world of quantum mechanics and what it tells us about the nature of existence.',
+                date: 'January 8, 2025'
+            },
+            {
+                category: 'philosophy',
+                id: 'phil-001',
+                title: 'The Paradox of Choice: Are We Too Free?',
+                punchline: 'In a world of infinite options, how do we find meaning in our decisions?',
+                date: 'January 7, 2025'
+            },
+            {
+                category: 'poetry',
+                id: 'poet-001',
+                title: 'Whispers of Dawn',
+                punchline: 'A meditation on new beginnings and the quiet courage it takes to start again.',
+                date: 'January 9, 2025'
+            },
+            {
+                category: 'photo-story',
+                id: 'photo-001',
+                title: 'Streets After Rain',
+                punchline: 'Finding beauty in reflections, puddles, and the transformed familiar.',
+                date: 'January 6, 2025'
+            },
+            {
+                category: 'politics',
+                permalink: 'atmanirbhar-bharat.html',
+                title: 'Atmanirbhar Bharat: The Journey We Must Take Together',
+                punchline: 'This isn’t about shutting our doors to the world, but about opening them from a position of confidence and capability.',
+                date: 'September 22, 2025'
+            },
+            {
+                category: 'politics',
+                id: 'pol-001',
+                title: 'The Death of Political Nuance',
+                punchline: 'How polarization is destroying our ability to think clearly about complex issues.',
+                date: 'January 4, 2025'
+            }
+        ];
+
         // Get category from URL parameter
         const urlParams = new URLSearchParams(window.location.search);
         const category = urlParams.get('cat');
@@ -255,7 +321,7 @@
 
         // Filter and display blogs
         const blogListContainer = document.getElementById('blogList');
-        const filteredBlogs = blogsData.filter(blog => blog.category === category);
+        const filteredBlogs = postsIndex.filter(blog => blog.category === category);
 
         if (filteredBlogs.length === 0) {
             blogListContainer.innerHTML = `

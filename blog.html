@@ -357,7 +357,7 @@
         <p>&copy; 2025 Personal Chronicles. All thoughts shared with authenticity.</p>
     </footer>
 
-    <script src="blogs-data.js?v=20261008e"></script>
+    <script src="blogs-data.js?v=20261008atmanirbhar"></script>
     <script>
         // Get blog ID from URL parameter
         const urlParams = new URLSearchParams(window.location.search);
@@ -407,7 +407,7 @@
 
             // Set back link
             const backLink = document.getElementById('backLink');
-            backLink.href = `category.html?cat=${blog.category}`;
+            backLink.href = `category.html?cat=${blog.category}&v=2`;
             document.getElementById('backText').textContent = `Back to ${categoryNames[blog.category]}`;
         } else {
             document.getElementById('articleContent').innerHTML = `
