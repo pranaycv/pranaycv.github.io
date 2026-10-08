@@ -5,6 +5,7 @@ const blogsData = [
     {
         id: 'tech-003',
         category: 'technology',
+        permalink: 'hack-the-north.html',
         title: 'Hack the North, After Twenty Years Away',
         punchline: 'Returning to Queen’s for MMAI opened a door I did not expect: 36 hours, an international team, and a pair of glasses that turn gaze into music.',
         date: 'October 8, 2026',

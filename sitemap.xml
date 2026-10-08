@@ -54,6 +54,13 @@
     
     <!-- Blog Posts - Add each blog post here -->
     <url>
+        <loc>https://pranaycv.github.io/hack-the-north.html</loc>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://pranaycv.github.io/blog.html?id=tech-003</loc>
         <lastmod>2026-10-08</lastmod>
         <changefreq>monthly</changefreq>
