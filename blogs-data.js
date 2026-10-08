@@ -103,6 +103,125 @@ const blogsData = [
         `
     },
     {
+        id: 'tech-004',
+        category: 'technology',
+        permalink: 'phoenix.html',
+        title: 'Phoenix: From Legacy Code to Clear Documentation and Code-Review — Powered by AI',
+        punchline: 'Phoenix was built for developers who want clear, up-to-date code documentation without the endless manual work, while keeping code secure and maintainable.',
+        date: 'September 13, 2025',
+        content: `
+            <p>When you join a team working on legacy C++ code, or inherit a codebase that’s never had documentation, what are the first things you do?</p>
+
+            <ul>
+                <li>Spend days just trying to understand how functions are organized, which modules depend on what.</li>
+                <li>Search through git history to figure out who changed what and why.</li>
+                <li>Realize some parts haven’t been touched in years, bugs or security issues hiding in obscure corners.</li>
+                <li>Try to write documentation manually — but quickly it becomes overwhelming.</li>
+            </ul>
+
+            <p>Phoenix was built to solve these pains. It’s made for developers who want clear, up-to-date code documentation without the endless manual work, while keeping code secure and maintainable.</p>
+
+            <h2>Instant Legacy Code Understanding</h2>
+            <ul>
+                <li><strong>The Pain:</strong> Decades-old codebases that are impossible to navigate</li>
+                <li><strong>The Solution:</strong> AI-powered analysis that makes even the most complex legacy code readable and understandable</li>
+                <li><strong>Real Impact:</strong> What used to take weeks of code archaeology now takes minutes</li>
+            </ul>
+
+            <h2>Fortress-Level Security</h2>
+            <ul>
+                <li><strong>The Pain:</strong> Sensitive codebases that can’t use cloud-based documentation tools</li>
+                <li><strong>The Solution:</strong> 100% local processing with Ollama AI models — your code never leaves your machine</li>
+                <li><strong>Real Impact:</strong> Enterprise-grade security without compromising on AI power</li>
+            </ul>
+
+            <h2>Zero-to-Hero Developer Onboarding</h2>
+            <ul>
+                <li><strong>The Pain:</strong> New developers taking months to become productive</li>
+                <li><strong>The Solution:</strong> Comprehensive documentation that reveals project structure, data flow, and architectural decisions</li>
+                <li><strong>Real Impact:</strong> New team members contributing meaningfully within days, not months</li>
+            </ul>
+
+            <h2>Complete Documentation Generation</h2>
+            <ul>
+                <li><strong>The Pain:</strong> Starting documentation from scratch feels impossible</li>
+                <li><strong>The Solution:</strong> Automated generation of Doxygen-style comments, inline code explanations, and architectural overviews</li>
+                <li><strong>Real Impact:</strong> Professional-grade documentation without the months of manual work</li>
+            </ul>
+
+            <h2>Smart Change Tracking</h2>
+            <ul>
+                <li><strong>The Pain:</strong> Documentation becomes stale the moment code changes</li>
+                <li><strong>The Solution:</strong> Git-integrated change detection that updates only what’s necessary</li>
+                <li><strong>Real Impact:</strong> Documentation that stays current automatically</li>
+            </ul>
+
+            <h2>Hidden Bug Hunter</h2>
+            <ul>
+                <li><strong>The Pain:</strong> Critical issues hiding in plain sight</li>
+                <li><strong>The Solution:</strong> AI-powered analysis that detects memory leaks, null pointer dereferences, buffer overflows, and performance bottlenecks</li>
+                <li><strong>Real Impact:</strong> Catch issues before they become production disasters</li>
+            </ul>
+
+            <h2>How It Solves Real Pain Points</h2>
+            <ul>
+                <li><strong>Legacy code confusion</strong> → Phoenix documents old, undocumented code so it becomes readable and maintainable.</li>
+                <li><strong>Documentation drift</strong> → Git integration ensures docs always reflect the current code state.</li>
+                <li><strong>Onboarding new developers</strong> → New team members can understand project structure and logic without weeks of trial and error.</li>
+                <li><strong>Security &amp; correctness</strong> → Local processing keeps code private, while function-level analysis highlights potential bugs.</li>
+            </ul>
+
+            <h2>The Traditional Nightmare</h2>
+            <pre><code>Receive Legacy Code → Spend Weeks Understanding → Write Basic Documentation → Code Changes → Documentation Becomes Outdated → Repeat Forever</code></pre>
+
+            <h2>The Phoenix Way</h2>
+            <pre><code>Point Phoenix at Repository → AI Analyzes Everything → Complete Documentation Generated → Code Changes → Phoenix Updates Automatically → Stay Current Forever</code></pre>
+
+            <h2>Getting Started</h2>
+            <p>Install Phoenix in three steps:</p>
+            <pre><code>git clone https://github.com/pranaycv/Phoenix.git
+cd Phoenix
+pip install -r requirements.txt</code></pre>
+
+            <p>Then use the GUI script (<code>auto_comment_cpp_code.py</code>) to generate documentation.</p>
+
+            <p>Your C++ project must be under Git, and you’ll need Tree-sitter and Ollama installed locally. The code is <a href="https://github.com/pranaycv/Phoenix" target="_blank" rel="noopener noreferrer">on GitHub</a>.</p>
+
+            <h2>Who Benefits Most</h2>
+            <ul>
+                <li>Teams with large legacy codebases that lack documentation.</li>
+                <li>Projects where code security is critical.</li>
+                <li>Developers who want continuous documentation maintenance.</li>
+                <li>Teams that want bug detection integrated into documentation workflows.</li>
+            </ul>
+
+            <h2>What’s Next &amp; How You Can Help</h2>
+            <p>Phoenix is already powerful, but it’s growing fast. Planned improvements include:</p>
+            <ul>
+                <li>Multi-language support (Java, Rust, Go).</li>
+                <li>Going beyond the function level to the project level, and then to the solution level.</li>
+                <li>Plugins for VS Code and Visual Studio.</li>
+                <li>Advanced AI models for architectural analysis.</li>
+            </ul>
+
+            <p>You can help by:</p>
+            <ul>
+                <li>Trying it out and sharing feedback via GitHub Issues.</li>
+                <li>Contributing features and fixes through Pull Requests.</li>
+                <li>Adding tricky code examples to improve parsing and documentation coverage.</li>
+            </ul>
+
+            <h2>Final Thoughts</h2>
+            <p>Documentation isn’t just about comments — it’s about keeping code understandable, safe, and maintainable over time.</p>
+
+            <p>Phoenix automates the hardest parts of documentation and analysis, so you spend less time writing docs and more time building great software.</p>
+
+            <blockquote>If your C++ repo feels like a mystery labyrinth, Phoenix is the flashlight you’ve been waiting for.</blockquote>
+
+            <p>This piece was first published on <a href="https://medium.com/@fzwcgnc/phoenix-from-legacy-code-to-clear-documentation-and-code-review-powered-by-ai-472b6fc423b6" target="_blank" rel="noopener noreferrer">Medium</a> on September 13, 2025.</p>
+        `
+    },
+    {
         id: 'tech-001',
         category: 'technology',
         title: 'The Silent Revolution of Artificial Intelligence',
@@ -190,6 +309,41 @@ const blogsData = [
     },
 
     // Philosophy blogs
+    {
+        id: 'phil-002',
+        category: 'philosophy',
+        permalink: 'knowledge-is-intrinsic.html',
+        title: 'Knowledge Is Intrinsic',
+        punchline: 'Knowledge isn’t just out there to grab; it’s a living, breathing part of us, waiting to be uncovered with patience and presence.',
+        date: 'September 13, 2025',
+        content: `
+            <h2>The Fragility of What We Call Truth</h2>
+            <p>Think about it: what we call “knowledge” today can feel solid, like a rock under our feet. Yet, history shows it’s more like sand — shifting with time. Take gravity, for instance. Newton gave us a groundbreaking way to understand it, a leap that felt like pure genius. But wasn’t that genius already simmering within him, waiting to be uncovered? Years later, Einstein came along and reframed it, showing us it’s not set in stone. What we accept as truth today — whether it’s scientific theories or cultural beliefs — often changes tomorrow. It’s a humbling reminder that much of our “knowledge” is just a snapshot, fragile and incomplete, shaped by the moment we’re living in.</p>
+
+            <h2>The Story Our DNA Might Be Carrying</h2>
+            <p>Now, here’s where it gets fascinating: what if the real treasure isn’t out there in textbooks or lectures, but woven into the very fabric of who we are? Our DNA is like a living archive, holding the story of evolution — millions of years of survival, adaptation, and wisdom packed into every cell. Imagine that! While we hustle to learn new skills or facts to get by, there’s a deeper layer of understanding waiting if we pause to listen. Next time you’re stressed or overthinking, try sitting quietly for a moment. Close your eyes and breathe. That flicker of clarity or intuition? It might just be your cells whispering an ancient truth about existence.</p>
+
+            <figure>
+                <img src="images/knowledge-is-intrinsic/stream.jpg" alt="A quiet forest stream in early morning mist, still water and mossy stones." loading="lazy">
+                <figcaption>Sit quietly for a moment. Close your eyes and breathe.</figcaption>
+            </figure>
+
+            <h2>Wisdom Hidden in Every Cell</h2>
+            <p>And it’s not just us — everything around us carries a story. The river flowing by, the rocks we walk on, the stars twinkling above — they all hold echoes of time, experience etched into their being. Ancient sages in India and beyond seemed to tap into this. They spoke of transcending time and space, knowing things they’d never seen with their eyes. We might call it intuition or a powerful mind, but what if it was more? What if they learned to listen to the silent wisdom encoded in their cells — and in the world itself? It’s a wild thought: the universe as a vast library, with every leaf, stone, and ripple holding a page of knowledge.</p>
+
+            <figure>
+                <img src="images/knowledge-is-intrinsic/stones.jpg" alt="Smooth river stones in shallow water, with a few fallen leaves." loading="lazy">
+                <figcaption>Every leaf, stone, and ripple holding a page of knowledge.</figcaption>
+            </figure>
+
+            <h2>Bringing It Home</h2>
+            <p>So, what does this mean for us today? In a world obsessed with chasing the next big thing, maybe the real breakthrough lies in stillness. Try this: set aside five minutes to sit quietly, feeling your breath, letting your mind settle. Or next time you’re by a tree or a stream, really look at it — like it’s sharing a secret. You might be surprised at the insights that bubble up. Knowledge isn’t just out there to grab; it’s a living, breathing part of us, waiting to be uncovered with patience and presence.</p>
+
+            <blockquote>The above thoughts are not intended to claim, but a rigor worth thinking.</blockquote>
+
+            <p>This piece was first published on <a href="https://medium.com/@fzwcgnc/knowledge-is-intrinsic-486ccabd8cbb" target="_blank" rel="noopener noreferrer">Medium</a> on September 13, 2025.</p>
+        `
+    },
     {
         id: 'phil-001',
         category: 'philosophy',

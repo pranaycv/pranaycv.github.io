@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Phoenix was built for developers who want clear, up-to-date C++ documentation without the endless manual work, while keeping code secure and maintainable.">
+    <title>Phoenix: From Legacy Code to Clear Documentation and Code-Review — Powered by AI, Pranay Soni</title>
+    <link rel="canonical" href="https://pranaycv.github.io/phoenix.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Playfair+Display:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --reading-bg: #f9f7f4;
+            --text-primary: #2d2d2d;
+            --text-secondary: #5a5a5a;
+            --accent: #2c5f2d;
+            --border-light: #e5e5e5;
+        }
+
+        body {
+            font-family: 'Lora', 'Georgia', serif;
+            background: var(--reading-bg);
+            color: var(--text-primary);
+            line-height: 1.8;
+            font-size: 1.125rem;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        .home-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .home-link:hover {
+            color: var(--accent);
+        }
+
+        /* Article */
+        article {
+            max-width: 1080px;
+            margin: 60px auto 80px;
+            padding: 0 48px;
+        }
+
+        .blog-meta {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .blog-category {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .blog-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .blog-punchline {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .blog-date {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .blog-content {
+            font-size: 1.125rem;
+            line-height: 1.9;
+            color: var(--text-primary);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5em;
+        }
+
+        .blog-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-top: 2em;
+            margin-bottom: 0.8em;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .blog-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-top: 1.8em;
+            margin-bottom: 0.7em;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid var(--accent);
+            padding-left: 30px;
+            margin: 2em 0;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        .blog-content ul, .blog-content ol {
+            margin-bottom: 1.5em;
+            padding-left: 30px;
+        }
+
+        .blog-content li {
+            margin-bottom: 0.5em;
+        }
+
+        .blog-content code {
+            background: rgba(44, 95, 45, 0.08);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+        }
+
+        .blog-content pre {
+            background: rgba(44, 95, 45, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1.5em;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .blog-content pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .blog-content a {
+            color: var(--accent);
+            text-underline-offset: 0.18em;
+        }
+
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 2em 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .blog-content figure {
+            margin: 2.2em 0;
+        }
+
+        .blog-content figure img {
+            display: block;
+            width: 100%;
+            margin: 0;
+        }
+
+        .blog-content figcaption {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            line-height: 1.5;
+            margin-top: 0.7em;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            margin-top: 80px;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                font-size: 1.05rem;
+            }
+
+            .header-content {
+                padding: 0 20px;
+            }
+
+            article {
+                padding: 0 20px;
+                margin: 40px auto 60px;
+            }
+
+            .blog-title {
+                font-size: 2.2rem;
+            }
+
+            .blog-punchline {
+                font-size: 1.15rem;
+            }
+
+            .blog-content {
+                font-size: 1.05rem;
+                line-height: 1.8;
+            }
+
+            .blog-content h2 {
+                font-size: 1.6rem;
+            }
+
+            .blog-content h3 {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Reading progress indicator */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--accent);
+            width: 0%;
+            z-index: 101;
+            transition: width 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <header class="header">
+        <div class="header-content">
+            <a href="category.html?cat=technology" class="back-link">
+                <span>←</span> <span>Back to Technology</span>
+            </a>
+            <a href="index.html" class="home-link">Home</a>
+        </div>
+    </header>
+
+    <article>
+        <div class="blog-meta">
+            <span class="blog-category">Technology</span>
+            <h1 class="blog-title">Phoenix: From Legacy Code to Clear Documentation and Code-Review — Powered by AI</h1>
+            <p class="blog-punchline">Phoenix was built for developers who want clear, up-to-date code documentation without the endless manual work, while keeping code secure and maintainable.</p>
+            <div class="blog-date">September 13, 2025</div>
+        </div>
+        <div class="blog-content">
+            <p>When you join a team working on legacy C++ code, or inherit a codebase that’s never had documentation, what are the first things you do?</p>
+
+            <ul>
+                <li>Spend days just trying to understand how functions are organized, which modules depend on what.</li>
+                <li>Search through git history to figure out who changed what and why.</li>
+                <li>Realize some parts haven’t been touched in years, bugs or security issues hiding in obscure corners.</li>
+                <li>Try to write documentation manually — but quickly it becomes overwhelming.</li>
+            </ul>
+
+            <p>Phoenix was built to solve these pains. It’s made for developers who want clear, up-to-date code documentation without the endless manual work, while keeping code secure and maintainable.</p>
+
+            <h2>Instant Legacy Code Understanding</h2>
+            <ul>
+                <li><strong>The Pain:</strong> Decades-old codebases that are impossible to navigate</li>
+                <li><strong>The Solution:</strong> AI-powered analysis that makes even the most complex legacy code readable and understandable</li>
+                <li><strong>Real Impact:</strong> What used to take weeks of code archaeology now takes minutes</li>
+            </ul>
+
+            <h2>Fortress-Level Security</h2>
+            <ul>
+                <li><strong>The Pain:</strong> Sensitive codebases that can’t use cloud-based documentation tools</li>
+                <li><strong>The Solution:</strong> 100% local processing with Ollama AI models — your code never leaves your machine</li>
+                <li><strong>Real Impact:</strong> Enterprise-grade security without compromising on AI power</li>
+            </ul>
+
+            <h2>Zero-to-Hero Developer Onboarding</h2>
+            <ul>
+                <li><strong>The Pain:</strong> New developers taking months to become productive</li>
+                <li><strong>The Solution:</strong> Comprehensive documentation that reveals project structure, data flow, and architectural decisions</li>
+                <li><strong>Real Impact:</strong> New team members contributing meaningfully within days, not months</li>
+            </ul>
+
+            <h2>Complete Documentation Generation</h2>
+            <ul>
+                <li><strong>The Pain:</strong> Starting documentation from scratch feels impossible</li>
+                <li><strong>The Solution:</strong> Automated generation of Doxygen-style comments, inline code explanations, and architectural overviews</li>
+                <li><strong>Real Impact:</strong> Professional-grade documentation without the months of manual work</li>
+            </ul>
+
+            <h2>Smart Change Tracking</h2>
+            <ul>
+                <li><strong>The Pain:</strong> Documentation becomes stale the moment code changes</li>
+                <li><strong>The Solution:</strong> Git-integrated change detection that updates only what’s necessary</li>
+                <li><strong>Real Impact:</strong> Documentation that stays current automatically</li>
+            </ul>
+
+            <h2>Hidden Bug Hunter</h2>
+            <ul>
+                <li><strong>The Pain:</strong> Critical issues hiding in plain sight</li>
+                <li><strong>The Solution:</strong> AI-powered analysis that detects memory leaks, null pointer dereferences, buffer overflows, and performance bottlenecks</li>
+                <li><strong>Real Impact:</strong> Catch issues before they become production disasters</li>
+            </ul>
+
+            <h2>How It Solves Real Pain Points</h2>
+            <ul>
+                <li><strong>Legacy code confusion</strong> → Phoenix documents old, undocumented code so it becomes readable and maintainable.</li>
+                <li><strong>Documentation drift</strong> → Git integration ensures docs always reflect the current code state.</li>
+                <li><strong>Onboarding new developers</strong> → New team members can understand project structure and logic without weeks of trial and error.</li>
+                <li><strong>Security &amp; correctness</strong> → Local processing keeps code private, while function-level analysis highlights potential bugs.</li>
+            </ul>
+
+            <h2>The Traditional Nightmare</h2>
+            <pre><code>Receive Legacy Code → Spend Weeks Understanding → Write Basic Documentation → Code Changes → Documentation Becomes Outdated → Repeat Forever</code></pre>
+
+            <h2>The Phoenix Way</h2>
+            <pre><code>Point Phoenix at Repository → AI Analyzes Everything → Complete Documentation Generated → Code Changes → Phoenix Updates Automatically → Stay Current Forever</code></pre>
+
+            <h2>Getting Started</h2>
+            <p>Install Phoenix in three steps:</p>
+            <pre><code>git clone https://github.com/pranaycv/Phoenix.git
+cd Phoenix
+pip install -r requirements.txt</code></pre>
+
+            <p>Then use the GUI script (<code>auto_comment_cpp_code.py</code>) to generate documentation.</p>
+
+            <p>Your C++ project must be under Git, and you’ll need Tree-sitter and Ollama installed locally. The code is <a href="https://github.com/pranaycv/Phoenix" target="_blank" rel="noopener noreferrer">on GitHub</a>.</p>
+
+            <h2>Who Benefits Most</h2>
+            <ul>
+                <li>Teams with large legacy codebases that lack documentation.</li>
+                <li>Projects where code security is critical.</li>
+                <li>Developers who want continuous documentation maintenance.</li>
+                <li>Teams that want bug detection integrated into documentation workflows.</li>
+            </ul>
+
+            <h2>What’s Next &amp; How You Can Help</h2>
+            <p>Phoenix is already powerful, but it’s growing fast. Planned improvements include:</p>
+            <ul>
+                <li>Multi-language support (Java, Rust, Go).</li>
+                <li>Going beyond the function level to the project level, and then to the solution level.</li>
+                <li>Plugins for VS Code and Visual Studio.</li>
+                <li>Advanced AI models for architectural analysis.</li>
+            </ul>
+
+            <p>You can help by:</p>
+            <ul>
+                <li>Trying it out and sharing feedback via GitHub Issues.</li>
+                <li>Contributing features and fixes through Pull Requests.</li>
+                <li>Adding tricky code examples to improve parsing and documentation coverage.</li>
+            </ul>
+
+            <h2>Final Thoughts</h2>
+            <p>Documentation isn’t just about comments — it’s about keeping code understandable, safe, and maintainable over time.</p>
+
+            <p>Phoenix automates the hardest parts of documentation and analysis, so you spend less time writing docs and more time building great software.</p>
+
+            <blockquote>If your C++ repo feels like a mystery labyrinth, Phoenix is the flashlight you’ve been waiting for.</blockquote>
+
+            <p>This piece was first published on <a href="https://medium.com/@fzwcgnc/phoenix-from-legacy-code-to-clear-documentation-and-code-review-powered-by-ai-472b6fc423b6" target="_blank" rel="noopener noreferrer">Medium</a> on September 13, 2025.</p>
+        </div>
+    </article>
+
+    <footer>
+        <p>&copy; 2026 Pranay Soni. All thoughts shared with authenticity.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>
