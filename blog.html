@@ -43,9 +43,9 @@
         }
 
         .header-content {
-            max-width: 800px;
+            max-width: 1120px;
             margin: 0 auto;
-            padding: 0 30px;
+            padding: 0 48px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -80,9 +80,9 @@
 
         /* Article */
         article {
-            max-width: 720px;
+            max-width: 1080px;
             margin: 60px auto 80px;
-            padding: 0 30px;
+            padding: 0 48px;
         }
 
         .blog-meta {
@@ -228,9 +228,9 @@
 
         /* Related Posts */
         .related-posts {
-            max-width: 720px;
+            max-width: 1080px;
             margin: 80px auto;
-            padding: 0 30px;
+            padding: 0 48px;
         }
 
         .related-title {
@@ -287,6 +287,10 @@
         @media (max-width: 768px) {
             body {
                 font-size: 1.05rem;
+            }
+
+            .header-content {
+                padding: 0 20px;
             }
 
             article {
@@ -353,7 +357,7 @@
         <p>&copy; 2025 Personal Chronicles. All thoughts shared with authenticity.</p>
     </footer>
 
-    <script src="blogs-data.js?v=20261008"></script>
+    <script src="blogs-data.js?v=20261008b"></script>
     <script>
         // Get blog ID from URL parameter
         const urlParams = new URLSearchParams(window.location.search);

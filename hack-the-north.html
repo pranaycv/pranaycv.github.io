@@ -44,9 +44,9 @@
         }
 
         .header-content {
-            max-width: 800px;
+            max-width: 1120px;
             margin: 0 auto;
-            padding: 0 30px;
+            padding: 0 48px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -81,9 +81,9 @@
 
         /* Article */
         article {
-            max-width: 720px;
+            max-width: 1080px;
             margin: 60px auto 80px;
-            padding: 0 30px;
+            padding: 0 48px;
         }
 
         .blog-meta {
@@ -229,9 +229,9 @@
 
         /* Related Posts */
         .related-posts {
-            max-width: 720px;
+            max-width: 1080px;
             margin: 80px auto;
-            padding: 0 30px;
+            padding: 0 48px;
         }
 
         .related-title {
@@ -288,6 +288,10 @@
         @media (max-width: 768px) {
             body {
                 font-size: 1.05rem;
+            }
+
+            .header-content {
+                padding: 0 20px;
             }
 
             article {
@@ -350,21 +354,21 @@
         <div class="blog-meta">
             <span class="blog-category">Technology</span>
             <h1 class="blog-title">Hack the North, After Twenty Years Away</h1>
-            <p class="blog-punchline">Returning to Queen’s for MMAI opened a door I did not expect: 36 hours, an international team, and a pair of glasses that turn gaze into music.</p>
+            <p class="blog-punchline">I went back to Queen’s for MMAI and ended up at Hack the North — 36 hours, an international team, and a pair of glasses that turn gaze into music.</p>
             <div class="blog-date">October 8, 2026</div>
         </div>
         <div class="blog-content">
-            <p>After nearly twenty years of building computer vision systems in industry, I went back to school. Queen’s University’s Master of Management in Artificial Intelligence was meant to reconnect me with the mathematics and practice of AI. I did not expect it to put me in a hall with a thousand students for 36 hours, wearing a 3D-printed camera rig, trying to turn eye movement into melody.</p>
+            <p>After nearly twenty years of building computer vision systems in industry, I went back to school. I joined Queen’s University’s Master of Management in Artificial Intelligence to get closer to the fundamentals of AI again. What I did not expect was Hack the North — a thousand students, 36 hours, and a 3D-printed camera sitting on my head while we tried to turn eye movement into music.</p>
 
-            <p>Hack the North is one of Canada’s largest hackathons. This year they received about 7,000 applications and selected around 1,000 participants. More than 350 teams started from scratch and tried to ship a working prototype before the weekend ended. Walking the floor, it felt less like a contest and more like 350 tiny startups, side by side, each chasing something they cared about.</p>
+            <p>Hack the North is one of Canada’s largest hackathons. This year they received about 7,000 applications and selected around 1,000 people. More than 350 teams started from scratch and tried to turn an idea into a working prototype before the weekend was over. Walking through the venue, it felt less like a competition and more like 350 small startups working side by side, each building something they cared about.</p>
 
-            <p>The organization was impressive — transportation, food, mentors, sleeping arrangements, sponsor booths. What mattered most to us, though, were the technical teams from the sponsor companies. When the hardware or the operating system refused to cooperate at two in the morning, there was someone in the room who could help.</p>
+            <p>The event was very well run — transportation, food, mentors, places to sleep, sponsor support. For us, the most valuable part was having technical teams from the sponsor companies right there. When the hardware or the software refused to cooperate at two in the morning, there was someone in the room who could actually help.</p>
 
             <h2>The idea I walked in with</h2>
 
-            <p>I wanted to build around computer vision and gaze. The picture in my head was a pair of smart glasses that looked two ways at once: out at the world, and in at the wearer’s eyes. If you can tell where a person is looking, and you can see what is in front of them, you can start to connect the two. That correlation felt like a foundation for many applications, not just one product.</p>
+            <p>I wanted to build something around computer vision and gaze tracking. The picture in my head was a pair of smart glasses that could look out at the world and also look in at the person’s eyes. If you know where someone is looking, and you can see what is in front of them, you can start to connect the two. That felt like a foundation for many different applications, not just one product.</p>
 
-            <p>We eventually became a team of four engineers from very different places and stages of life. One teammate from France brought aerospace engineering. Another, from Slovakia, brought mechanical engineering and unusually strong programming. A first-year computer science student from Calgary brought speed and hunger. I brought years of computer vision and AI. Different ages, different passports, different strengths. That mix was one of the most interesting parts of the weekend.</p>
+            <p>We ended up as a team of four, from different parts of the world and with very different backgrounds. One teammate from France came from aerospace engineering. He designed the 3D-printed headset we wore, and he was a very understanding person to work with through a long, messy weekend. Another, from Slovakia, brought mechanical engineering and very strong programming skills. The fourth was a Waterloo student from Calgary, with a kind of leadership that kept the team moving when things got difficult. I brought my years in computer vision and AI. Different ages, different strengths, different ways of solving problems. That mix was one of the best parts of the experience.</p>
 
             <figure>
                 <img src="images/hack-the-north/team.jpg" alt="Four teammates around a classroom table during Hack the North, with a laptop open and glasses being fitted in the background.">
@@ -373,9 +377,9 @@
 
             <h2>How the idea became EyeMelody</h2>
 
-            <p>A gaze tracker is a device. It is not yet a reason. During the hackathon we started asking who this might actually help. People with severe physical disabilities often cannot use their hands. Gaze is still theirs. That thought pulled the project away from a generic tracker and toward a musical instrument.</p>
+            <p>We started with a gaze-tracking device, but a tracker by itself is not really a product. During the hackathon we kept asking who this might actually help. That led us to people with severe physical disabilities who may not be able to use their hands. Gaze is still something they have.</p>
 
-            <p>EyeMelody uses looking as input. The headset tracks where the wearer is gazing. Colored objects in the scene are tied to musical tones. Look at them in sequence, and the tones play in sequence. A melody, made only with the eyes. We wanted to see whether eye movement could become a way of interacting with technology — and a way of expressing oneself.</p>
+            <p>That is how EyeMelody came about. The idea is to use looking as a way to make music. The headset tracks where you are looking. Different colored objects or cards are tied to different tones. As you look at them in sequence, the tones play in sequence, and you can build a melody using only your eyes. We wanted to see whether eye movement could become a new way of interacting with technology, and a way of expressing yourself.</p>
 
             <figure>
                 <img src="images/hack-the-north/headset.jpg" alt="A head-mounted prototype with a purple 3D-printed arm, two cameras, and a FARPOINT headband worn over purple glasses.">
@@ -384,11 +388,11 @@
 
             <h2>QNX, a Raspberry Pi, and the hard part</h2>
 
-            <p>The next problem was practical: what hardware and operating system could we actually get working in a weekend? We found QNX’s platform — a Raspberry Pi 5 running the QNX operating system. Real-time behavior mattered. Gaze tracking only feels like interaction if the loop is tight. A delayed glance is not a glance; it is lag.</p>
+            <p>One of the biggest challenges was deciding what hardware and operating system we could actually get working in a weekend. We found QNX’s platform — a Raspberry Pi 5 running the QNX operating system. The real-time side of QNX mattered for us. Gaze tracking only feels right if the system responds quickly.</p>
 
-            <p>Getting the libraries we needed onto that platform was not smooth. We spent a painful stretch on installation and configuration. The QNX technical team stayed with us through it. With their help we eventually had an environment that could run the software we were trying to write.</p>
+            <p>Getting the libraries we needed onto that platform was not easy. We spent a lot of time on installation and configuration. The QNX technical team was extremely helpful, and with their support we eventually got the software environment running.</p>
 
-            <p>From there the work was the pipeline. A small neural network identified objects in the scene. Gaze tracking estimated where the wearer was looking. Those two streams had to meet in the real world: this glance, that object, this sound. A lot of the integration happened in C++, which let us join the computer-vision and AI pieces to the embedded system instead of treating them as separate demos. Seeing the full path work — camera, gaze, model, tone — was the most satisfying moment of the project.</p>
+            <p>From there we built the pipeline. A small neural network identified objects in the scene. Gaze tracking estimated where the person was looking. Then we mapped that gaze onto objects in the real world and played the matching sound. A lot of the development and hardware integration was in C++, which let us bring the computer-vision and AI pieces together with the embedded system. Seeing the whole path work — from the cameras, through gaze and the model, to the sound — was one of the most rewarding parts of the project.</p>
 
             <figure>
                 <img src="images/hack-the-north/dashboard.jpg" alt="The EyeMelody laptop interface showing an inner-camera eye lock view on the left and an outer-camera gaze point view on the right.">
@@ -397,13 +401,13 @@
 
             <h2>What Queen’s MMAI actually changed</h2>
 
-            <p>The program was not a backdrop. We had worked through machine-learning concepts and a couple of Kaggle competitions, which trained a habit: think about how a model is built, not only what it outputs. The mathematics behind AI and deep learning stopped being atmosphere and became tools. That made it possible to implement the vision pieces rather than drop in a black box and hope.</p>
+            <p>My time in the Queen’s MMAI program helped me directly during the hackathon. We had worked through machine-learning concepts and a couple of Kaggle competitions, so I was used to thinking about how a model is built, not only what it outputs. The program also gave me a stronger foundation in the mathematics behind AI and deep learning. That made it possible to implement the vision pieces instead of treating the model as a black box.</p>
 
-            <p>More broadly, MMAI gave me a way back into technology from an academic angle after many years in industry — and then asked me to use that learning in a room full of students who had grown up building in public.</p>
+            <p>More than that, MMAI gave me a way to come back to technology from an academic side after many years in industry, and then put that learning to work in a completely different environment.</p>
 
             <h2>The QNX challenge</h2>
 
-            <p>Our team won the QNX-sponsored challenge: “Create an Embedded System with QNX that Uses AI.” The recognition landed because the project sat at the intersection of things I care about: AI, computer vision, embedded systems, and human-computer interaction. We had shown, in a rough but working form, that those pieces could live together on QNX hardware.</p>
+            <p>Our team won the QNX-sponsored challenge: “Create an Embedded System with QNX that Uses AI.” That meant a lot, because the project sat at the intersection of things I care about: AI, computer vision, embedded systems, and human-computer interaction. We were able to show, in a rough but working prototype, how those pieces could live together on QNX hardware.</p>
 
             <figure>
                 <img src="images/hack-the-north/stage.jpg" alt="The Hack the North stage with QNX slides listing EyeMelody among the Embedded System with AI projects.">
@@ -414,13 +418,13 @@
 
             <h2>What stayed with me</h2>
 
-            <p>The prize was not the main thing. What impressed me most was the talent, energy, and determination in the younger generation around us. People who were simply passionate about building. That is easy to say from a distance. It is different to sit beside it for a day and a night.</p>
+            <p>The prize was not the main thing. What impressed me most was the talent, energy, and determination among the younger people around us. Working beside students who were so passionate about building things was genuinely inspiring.</p>
 
-            <p>The weekend also reinforced something I have been watching from industry: AI is shortening the path from an idea to a working prototype. Things that used to take months or years to even try can now be tested in a weekend. Accessible hardware, capable models, and people who will stay up to wire a camera to a headband — that combination turns sketches into objects.</p>
+            <p>The weekend also reinforced something I have been seeing in industry: AI is shortening the path from an idea to a working prototype. Things that might have taken months or years to even try can now be tested in a weekend. Accessible hardware, capable models, and people who will stay up to wire a camera to a headband — that combination turns sketches into something you can actually hold.</p>
 
-            <blockquote>Hack the North was a chance to step outside my usual professional environment, learn from a new generation of engineers, and put Queen’s to work in a room that did not care about my resume.</blockquote>
+            <blockquote>For me, Hack the North was a chance to step outside my usual professional environment, learn from a new generation of engineers, and put what I am learning at Queen’s to work in a real setting.</blockquote>
 
-            <p>Coming back to school after twenty years was already a turn. Spending a weekend building EyeMelody with three people I had just met made that turn feel worth it. Not because we won a challenge, but because we got to find out, quickly, whether a gaze could become a melody — and because the people around us were already onto the next idea.</p>
+            <p>Coming back to school after twenty years, and then having a weekend like this, has been a very rewarding part of my MMAI journey. Not because we won a challenge, but because we got to find out, quickly, whether a gaze could become a melody — and because the people around us were already onto the next idea.</p>
         </div>
     </article>
 
